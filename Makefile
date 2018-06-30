@@ -7,14 +7,7 @@ rebuild:
 	fi;
 	@docker-compose build > /dev/null
 	@echo "Build image complete!"
-	@docker run                                                                                                        \
-        --rm                                                                                                           \
-        --name criptocontrol_cli                                                                                       \
-        -v ~/proyect/CriptoControl:/data                                                                               \
-        criptocontrol_cli:latest                                                                                       \
-        bash -c "                                                                                                      \
-            cd data &&                                                                                                 \
-            composer install                                                                                           \
+	@./composer instal                                                                                    \
 
 up:
 
@@ -28,33 +21,8 @@ up:
 
 init:
 
-	@docker run                                                                                                        \
-        --rm                                                                                                           \
-        --name criptocontrol_cli                                                                                       \
-        -v ~/proyect/CriptoControl:/data                                                                               \
-        criptocontrol_cli:latest                                                                                       \
-        bash -c "                                                                                                      \
-            cd data &&                                                                                                 \
-             composer install                                                                                          \
-        "
-
-composer-install:
-
-	@docker run                                                                                                        \
-	    --rm                                                                                                           \
-	    --name criptocontrol_cli                                                                                       \
-	    -v ~/proyect/CriptoControl:/data                                                                               \
-	    criptocontrol_cli:latest                                                                                       \
-	    bash -c "                                                                                                      \
-	        cd data &&                                                                                                 \
-	        composer install                                                                                           \
-        "
+	@./composer instal
 
 test:
 
-	@docker run                                                                                                        \
-        --rm                                                                                                           \
-        --name criptocontrol_cli                                                                                       \
-        -v ~/proyect/CriptoControl:/data                                                                               \
-        criptocontrol_cli:latest                                                                                       \
-        bash -c "cd data && vendor/bin/phpunit"
+	@./phpunit

@@ -6,14 +6,13 @@ use CriptoControl\Domain\Investment\Investment;
 
 class InvestmentMotherObject
 {
-    public const ID     = '4545-5454-5454-54s';
     public const CODE   = 'EUR';
     public const AMOUNT = 12345.12;
 
     public static function buildToFixed(array $attributes = []): Investment
     {
         $defaultAttributes = [
-            'id'     => self::ID,
+            'id'     => '',
             'code'   => self::CODE,
             'amount' => self::AMOUNT,
         ];

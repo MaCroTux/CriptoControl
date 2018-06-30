@@ -10,10 +10,6 @@ This app is a API to HitBTC for control of our investments in criptocurrency.
 
 `make rebuild`
 
-## Composer install 
-
-`make composer-install`
-
 ## Lauch test unit
 
 `make test`
