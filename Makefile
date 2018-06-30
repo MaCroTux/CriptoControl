@@ -28,7 +28,15 @@ up:
 
 init:
 
-	@composer install
+	@docker run                                                                                                        \
+        --rm                                                                                                           \
+        --name criptocontrol_cli                                                                                       \
+        -v ~/proyect/CriptoControl:/data                                                                               \
+        criptocontrol_cli:latest                                                                                       \
+        bash -c "                                                                                                      \
+            cd data &&                                                                                                 \
+             composer install                                                                                          \
+        "
 
 composer-install:
 
@@ -41,3 +49,12 @@ composer-install:
 	        cd data &&                                                                                                 \
 	        composer install                                                                                           \
         "
+
+test:
+
+	@docker run                                                                                                        \
+        --rm                                                                                                           \
+        --name criptocontrol_cli                                                                                       \
+        -v ~/proyect/CriptoControl:/data                                                                               \
+        criptocontrol_cli:latest                                                                                       \
+        bash -c "cd data && vendor/bin/phpunit"
