@@ -1,0 +1,7 @@
+services:
+
+    InMemoryInvestmentReadRepository:
+            class: CriptoControl\Infrastructure\Persistence\InMemory\InMemoryInvestmentReadRepository
+    GetInvestmentListHandler:
+        class: CriptoControl\Application\Query\GetInvestmentListHandler
+        arguments: ['@InMemoryInvestmentReadRepository']

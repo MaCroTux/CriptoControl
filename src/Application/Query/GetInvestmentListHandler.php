@@ -11,7 +11,6 @@ class GetInvestmentListHandler
 
     public function __construct(InvestmentReadRepository $investmentReadRepository)
     {
-
         $this->investmentReadRepository = $investmentReadRepository;
     }
 

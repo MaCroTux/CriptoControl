@@ -6,6 +6,7 @@ use CriptoControl\Application\Query\InvestmentReadRepository;
 use CriptoControl\Domain\Investment\Investment;
 use CriptoControl\Domain\Investment\InvestmentCollection;
 use CriptoControl\Domain\Investment\InvestmentRepository;
+use CriptoControl\Tests\Unit\Domain\Investment\InvestmentMotherObject;
 
 class InMemoryInvestmentReadRepository implements InvestmentReadRepository, InvestmentRepository
 {
