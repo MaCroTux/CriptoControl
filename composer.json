@@ -1,0 +1,19 @@
+{
+  "authors": [
+      {
+          "name": "Javier Feria",
+          "email": "macrotux@gmail.com",
+          "homepage": "http://javierferia.com",
+          "role": "Owner"
+      }
+  ],
+  "autoload": {
+    "psr-4": {
+      "CriptoControl\\": "src/",
+      "CriptoControl\\Tests\\Unit\\": "tests/unit/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7"
+  }
+}
