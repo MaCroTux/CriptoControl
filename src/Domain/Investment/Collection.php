@@ -1,6 +1,6 @@
 <?php
 
-namespace CriptoControl\Application\Query;
+namespace CriptoControl\Domain\Investment;
 
 use Collections\Collection as VendorCollection;
 

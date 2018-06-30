@@ -3,6 +3,7 @@
 namespace CriptoControl\Application\Query;
 
 use CriptoControl\Domain\Investment\Investment;
+use CriptoControl\Domain\Investment\InvestmentCollection;
 
 class GetInvestmentListHandler
 {
