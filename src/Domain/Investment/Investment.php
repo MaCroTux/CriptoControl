@@ -11,7 +11,7 @@ class Investment
     /** @var string */
     private $id;
 
-    public function __construct(string $id, string $code, float $amount)
+    private function __construct(InvestmentId $id, string $code, float $amount)
     {
         $this->code = $code;
         $this->amount = $amount;
@@ -20,7 +20,7 @@ class Investment
 
     public static function build(string $id, string $code, float $amount): self
     {
-        return new self($id, $code, $amount);
+        return new self(InvestmentId::fromString($id), $code, $amount);
     }
 
     public function id(): string

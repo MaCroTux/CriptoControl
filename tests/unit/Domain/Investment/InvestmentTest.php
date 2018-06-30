@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class InvestmentTest extends TestCase
 {
-    private const ID     = '654-654-654-645';
+    private const ID     = 'b4e13af7-0aa6-4a15-b871-eed7dba3fc9a';
     private const CODE   = 'USD';
     private const AMOUNT = 201512.00;
 
@@ -18,7 +18,7 @@ class InvestmentTest extends TestCase
     {
         parent::setUp();
 
-        $this->sut = new Investment(self::ID, self::CODE, self::AMOUNT);
+        $this->sut = Investment::build(self::ID, self::CODE, self::AMOUNT);
     }
 
     public function testShouldReturnIdWhenGetterCalled(): void

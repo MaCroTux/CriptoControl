@@ -3,6 +3,7 @@
 namespace CriptoControl\Tests\Unit\Domain\Investment;
 
 use CriptoControl\Domain\Investment\Investment;
+use CriptoControl\Domain\Investment\InvestmentId;
 
 class InvestmentMotherObject
 {
@@ -12,7 +13,7 @@ class InvestmentMotherObject
     public static function buildToFixed(array $attributes = []): Investment
     {
         $defaultAttributes = [
-            'id'     => '',
+            'id'     => InvestmentId::create(),
             'code'   => self::CODE,
             'amount' => self::AMOUNT,
         ];
@@ -21,6 +22,6 @@ class InvestmentMotherObject
 
         $constructorArgs = array_values(array_merge($defaultAttributes, $attributes));
 
-        return new Investment(...$constructorArgs);
+        return Investment::build(...$constructorArgs);
     }
 }
