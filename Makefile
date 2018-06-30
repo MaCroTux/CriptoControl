@@ -7,7 +7,7 @@ rebuild:
 	fi;
 	@docker-compose build > /dev/null
 	@echo "Build image complete!"
-	@./composer instal                                                                                    \
+	@docker/composer instal                                                                                    \
 
 up:
 
@@ -21,8 +21,8 @@ up:
 
 init:
 
-	@./composer instal
+	@docker/composer instal
 
 test:
 
-	@./phpunit
+	@docker/test-all
