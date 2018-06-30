@@ -8,16 +8,24 @@ class Investment
     private $code;
     /** @var float */
     private $amount;
+    /** @var string */
+    private $id;
 
-    public function __construct(string $code, float $amount)
+    public function __construct(string $id, string $code, float $amount)
     {
         $this->code = $code;
         $this->amount = $amount;
+        $this->id = $id;
     }
 
-    public static function build(string $code, float $amount): self
+    public static function build(string $id, string $code, float $amount): self
     {
-        return new self($code, $amount);
+        return new self($id, $code, $amount);
+    }
+
+    public function id(): string
+    {
+        return $this->id;
     }
 
     public function code(): string

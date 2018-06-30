@@ -2,18 +2,21 @@
 
 namespace CriptoControl\Application\Query;
 
-use CriptoControl\Domain\Investment\Investment;
 use CriptoControl\Domain\Investment\InvestmentCollection;
 
 class GetInvestmentListHandler
 {
+    /** @var InvestmentReadRepository */
+    private $investmentReadRepository;
+
+    public function __construct(InvestmentReadRepository $investmentReadRepository)
+    {
+
+        $this->investmentReadRepository = $investmentReadRepository;
+    }
+
     public function handle(): InvestmentCollection
     {
-        return new InvestmentCollection(
-            [
-                Investment::build('BTC', '6700.00')
-            ],
-            Investment::class
-        );
+        return $this->investmentReadRepository->all();
     }
 }
