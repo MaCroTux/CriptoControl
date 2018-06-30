@@ -13,3 +13,7 @@ This app is a API to HitBTC for control of our investments in criptocurrency.
 ## Lauch test unit
 
 `make test`
+
+## List the investment in json format
+
+`docker/php app.php command:getInvestmentList`
