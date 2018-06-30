@@ -3,6 +3,7 @@
 namespace CriptoControl\Tests\Unit\Application\Query;
 
 use CriptoControl\Application\Query\GetInvestmentList;
+use CriptoControl\Application\Query\InvestmentCollection;
 use PHPUnit\Framework\TestCase;
 
 class GetInvestmentListTest extends TestCase
@@ -11,8 +12,8 @@ class GetInvestmentListTest extends TestCase
     {
         $sut = new GetInvestmentList();
 
-        $result = $sut->handle();
+        $investmentCollection = $sut->handle();
 
-        $this->assertInternalType('array', $result);
+        $this->assertInstanceOf(InvestmentCollection::class, $investmentCollection);
     }
 }

@@ -4,8 +4,8 @@ namespace CriptoControl\Application\Query;
 
 class GetInvestmentList
 {
-    public function handle(): array
+    public function handle(): InvestmentCollection
     {
-        return [];
+        return new InvestmentCollection([]);
     }
 }
