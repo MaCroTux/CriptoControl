@@ -5,6 +5,7 @@ namespace CriptoControl\Tests\Integration\Infrastructure\UserInterface;
 use CriptoControl\Application\Query\GetInvestmentListHandler;
 use CriptoControl\Infrastructure\Persistence\InMemory\InMemoryInvestmentReadRepository;
 use CriptoControl\Infrastructure\UserInterface\Cli\InvestmentCommand;
+use CriptoControl\Tests\Integration\Base\OutputSpy;
 use CriptoControl\Tests\Unit\Domain\Investment\InvestmentMotherObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Input\InputInterface;

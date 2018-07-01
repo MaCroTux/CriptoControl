@@ -1,6 +1,6 @@
 <?php
 
-namespace CriptoControl\Tests\Integration\Infrastructure\UserInterface;
+namespace CriptoControl\Tests\Integration\Base;
 
 use Symfony\Component\Console\Output\Output;
 
