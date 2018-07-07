@@ -26,11 +26,12 @@ class InvestmentCommandTest extends TestCase
 
         $getInvestmentListHandler = new GetInvestmentListHandler($investmentRepository);
 
-        $input  = $this->prophesize(InputInterface::class);
+        /** @var InputInterface $input */
+        $input  = $this->prophesize(InputInterface::class)->reveal();
         $output = new OutputSpy();
 
         $sut = new InvestmentCommand($getInvestmentListHandler);
-        $sut->execute($input->reveal(), $output);
+        $sut->execute($input, $output);
 
         $this->assertEquals(json_encode($investmentExpected->toArray()), $output->data());
     }

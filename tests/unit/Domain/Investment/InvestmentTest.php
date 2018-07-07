@@ -1,6 +1,6 @@
 <?php
 
-namespace CriptoControl\Tests\Domain\Investment;
+namespace CriptoControl\Tests\Unit\Domain\Investment;
 
 use CriptoControl\Domain\Investment\Investment;
 use PHPUnit\Framework\TestCase;

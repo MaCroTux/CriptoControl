@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker/php vendor/bin/phpstan -n --no-ansi --level=4 --autoload-file=vendor/autoload.php analyze src tests

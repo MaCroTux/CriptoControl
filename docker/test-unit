@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
+docker/phpstan
 docker/phpunit --testsuite unit
