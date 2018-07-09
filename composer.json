@@ -25,6 +25,8 @@
     "symfony/console": "^4.1",
     "symfony/yaml": "^4.1",
     "symfony/config": "^4.1",
-    "fzaninotto/faker": "^1.7"
+    "fzaninotto/faker": "^1.7",
+    "hitbtc-com/hitbtc-php-sdk": "^1.1",
+    "vlucas/phpdotenv": "^2.5"
   }
 }
