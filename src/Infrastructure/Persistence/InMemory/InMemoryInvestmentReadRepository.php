@@ -3,6 +3,7 @@
 namespace CriptoControl\Infrastructure\Persistence\InMemory;
 
 use CriptoControl\Application\Query\InvestmentReadRepository;
+use CriptoControl\Domain\Exceptions\InvestmentNotFound;
 use CriptoControl\Domain\Investment\Investment;
 use CriptoControl\Domain\Investment\InvestmentCollection;
 use CriptoControl\Domain\Investment\InvestmentRepository;
@@ -20,5 +21,17 @@ class InMemoryInvestmentReadRepository implements InvestmentReadRepository, Inve
     public function save(Investment $investment): void
     {
         $this->investments[$investment->id()] = $investment;
+    }
+
+    /**
+     * @throws InvestmentNotFound
+     */
+    public function byCurrencyCode(string $currency): Investment
+    {
+        if (!isset($this->investments[$currency])) {
+            throw new InvestmentNotFound($currency);
+        }
+
+        $this->investments[$currency];
     }
 }

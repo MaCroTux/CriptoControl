@@ -11,3 +11,6 @@ services:
     GetInvestmentListHandler:
         class: CriptoControl\Application\Query\GetInvestmentListHandler
         arguments: ['@InvestmentRepository']
+    GetInvestmentWithCurrencyHandler:
+        class: CriptoControl\Application\Query\GetInvestmentWithCurrencyHandler
+        arguments: ['@InvestmentRepository']
