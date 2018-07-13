@@ -14,9 +14,10 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 $containerBuilder = new ContainerBuilder();
 
 $dotenv = new Dotenv\Dotenv(__DIR__, '.env.' . ENVIRONMENT_DEFAULT);
+$dotenv->load();
 
-$containerBuilder->setParameter('HitBTCApiKey', '');
-$containerBuilder->setParameter('HitBTCSecret', '');
+$containerBuilder->setParameter('HitBTCApiKey', getenv('HitBTCApiKey'));
+$containerBuilder->setParameter('HitBTCSecret', getenv('HitBTCSecret'));
 $containerBuilder->setParameter('HitBTCModeDemo', FALSE);
 $containerBuilder->setParameter('CriptosToFiat', 'https://api.cryptonator.com/api/ticker/');
 
