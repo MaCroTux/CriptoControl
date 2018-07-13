@@ -3,7 +3,7 @@
 docker run                                                                                                             \
     --rm                                                                                                               \
     --name criptocontrol_cli                                                                                           \
-    -v ~/proyect/CriptoControl:/data                                                                                   \
+    -v ${PWD}:/data                                                                                   \
     -w /data                                                                                                           \
     criptocontrol_cli:latest                                                                                           \
     composer $@
