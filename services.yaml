@@ -6,11 +6,15 @@ services:
     InvestmentRepository:
         class: CriptoControl\Infrastructure\Persistence\Api\HitBTCInvestmentRepository
         arguments: ['@ProtectedClient']
-    InMemoryInvestmentReadRepository:
-        class: CriptoControl\Infrastructure\Persistence\InMemory\InMemoryInvestmentReadRepository
     GetInvestmentListHandler:
         class: CriptoControl\Application\Query\GetInvestmentListHandler
         arguments: ['@InvestmentRepository']
     GetInvestmentWithCurrencyHandler:
         class: CriptoControl\Application\Query\GetInvestmentWithCurrencyHandler
         arguments: ['@InvestmentRepository']
+    CoinMarketCapExchangeReadRepository:
+        class: CriptoControl\Infrastructure\Persistence\Api\CoinMarketCapExchangeReadRepository
+        arguments: ['%CoinMarketUrl%', '%CoinMarketApiKey%']
+    GetExchangeForInvestmentHandler:
+        class: CriptoControl\Application\Query\GetExchangeForInvestmentHandler
+        arguments: ['@CoinMarketCapExchangeReadRepository']
