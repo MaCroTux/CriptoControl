@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+docker run                                                                                                             \
+    --rm                                                                                                               \
+    --name criptocontrol_cli                                                                                           \
+    -v ${PWD}:/data                                                                                   \
+    -w /data                                                                                                           \
+    criptocontrol_cli:latest                                                                                           \
+    php app.php $@
