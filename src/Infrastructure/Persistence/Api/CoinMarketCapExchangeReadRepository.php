@@ -21,6 +21,10 @@ class CoinMarketCapExchangeReadRepository implements ExchangeReadRepository
     /** @var string */
     private $apiKey;
 
+    private $compatibilityTableCurrency = [
+        'IOTA' => 'MIOTA'
+    ];
+
     public function __construct(string $url, string $apiKey)
     {
         $this->url    = $url;
@@ -32,7 +36,7 @@ class CoinMarketCapExchangeReadRepository implements ExchangeReadRepository
      */
     public function find(Investment $investment, string $currency): ExchangeAmount
     {
-        $criptoCurrency = strtoupper($investment->code());
+        $criptoCurrency = $this->compatibilityTableCurrency(strtoupper($investment->code()));
         $currencyCode = strtoupper($currency);
 
         $response = $this->sendQuery($criptoCurrency, $currencyCode);
@@ -53,5 +57,10 @@ class CoinMarketCapExchangeReadRepository implements ExchangeReadRepository
         $url = $this->url.'cryptocurrency/quotes/latest?symbol='.$criptoCurrency.','.$currencyCode.'&'.$this->apiKey;
 
         return json_decode(file_get_contents($url), true);
+    }
+
+    private function compatibilityTableCurrency(string $criptoCurrency): string
+    {
+        return $this->compatibilityTableCurrency[$criptoCurrency] ?? $criptoCurrency;
     }
 }

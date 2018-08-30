@@ -5,6 +5,7 @@ require __DIR__ . '/vendor/autoload.php';
 const ENVIRONMENT_DEFAULT = 'dev';
 
 use CriptoControl\Infrastructure\UserInterface\Cli\ExchangeByCurrencyCommand;
+use CriptoControl\Infrastructure\UserInterface\Cli\GetInvestmentByFiatCommand;
 use CriptoControl\Infrastructure\UserInterface\Cli\InvestmentByCurrencyCommand;
 use CriptoControl\Infrastructure\UserInterface\Cli\InvestmentCommand;
 use Symfony\Component\Config\FileLocator;
@@ -31,4 +32,6 @@ $application = new Application();
 $application->add(new InvestmentCommand($containerBuilder->get('GetInvestmentListHandler')));
 $application->add(new InvestmentByCurrencyCommand($containerBuilder->get('GetInvestmentWithCurrencyHandler')));
 $application->add(new ExchangeByCurrencyCommand($containerBuilder->get('GetExchangeForInvestmentHandler')));
+$application->add(new GetInvestmentByFiatCommand($containerBuilder->get('GetInvestmentByFiatHandler')));
+
 $application->run();

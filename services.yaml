@@ -18,3 +18,6 @@ services:
     GetExchangeForInvestmentHandler:
         class: CriptoControl\Application\Query\GetExchangeForInvestmentHandler
         arguments: ['@CoinMarketCapExchangeReadRepository']
+    GetInvestmentByFiatHandler:
+        class: CriptoControl\Application\Query\GetInvestmentByFiatHandler
+        arguments: ['@GetInvestmentListHandler', '@GetExchangeForInvestmentHandler']
