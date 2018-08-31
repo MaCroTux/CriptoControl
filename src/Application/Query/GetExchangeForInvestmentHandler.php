@@ -3,7 +3,6 @@
 namespace CriptoControl\Application\Query;
 
 use CriptoControl\Domain\Exchange\ExchangeAmount;
-use CriptoControl\Domain\Exchange\ExchangeReadRepository;
 use CriptoControl\Domain\Investment\Investment;
 
 class GetExchangeForInvestmentHandler

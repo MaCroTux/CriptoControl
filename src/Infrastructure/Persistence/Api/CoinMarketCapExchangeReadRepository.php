@@ -9,9 +9,9 @@
 namespace CriptoControl\Infrastructure\Persistence\Api;
 
 
+use CriptoControl\Application\Query\ExchangeReadRepository;
 use CriptoControl\Domain\Exceptions\ExchangeException;
 use CriptoControl\Domain\Exchange\ExchangeAmount;
-use CriptoControl\Domain\Exchange\ExchangeReadRepository;
 use CriptoControl\Domain\Investment\Investment;
 
 class CoinMarketCapExchangeReadRepository implements ExchangeReadRepository
