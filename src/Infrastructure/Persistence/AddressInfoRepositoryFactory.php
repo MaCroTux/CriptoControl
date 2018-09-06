@@ -16,6 +16,8 @@ class AddressInfoRepositoryFactory
         switch ($type) {
             case CryptoTypeEnum::btc():
                 return new BTCAddressInfoRepository();
+            case CryptoTypeEnum::eth():
+                return new ETHAddressInfoRepository();
             default:
                 throw new AddressNotFound($type);
         }
