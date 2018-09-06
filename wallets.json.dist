@@ -1,0 +1,12 @@
+{
+  "BTC": {
+    "address": "XXXXXXXXXXXXXXXXXXXXXXXX",
+    "decimals": 100000000,
+    "urlExplorer": "https:\/\/www.blockchain.com\/btc\/address\/"
+  },
+  "ETH": {
+    "address": "0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+    "decimals": 1000000000000000000,
+    "urlExplorer": "https:\/\/etherscan.io\/address\/"
+  }
+}
