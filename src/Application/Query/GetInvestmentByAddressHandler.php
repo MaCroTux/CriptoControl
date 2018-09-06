@@ -4,8 +4,16 @@ namespace CriptoControl\Application\Query;
 
 class GetInvestmentByAddressHandler
 {
-    public function handle(string $type, string $address): int
+    /** @var AddressInfoRepository */
+    private $addressInfoRepository;
+
+    public function __construct(AddressInfoRepository $addressInfoRepository)
     {
-        return 10000;
+        $this->addressInfoRepository = $addressInfoRepository;
+    }
+
+    public function handle(string $address): int
+    {
+        return $this->addressInfoRepository->balance($address);
     }
 }
